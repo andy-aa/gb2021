@@ -20,7 +20,7 @@ session_start();
 <body>
 <?php
 if (isset($_SESSION["ban_time"])) {
-    $rest_ban_time = 60 - (time() - $_SESSION["ban_time"]);
+    $rest_ban_time = 20 - (time() - $_SESSION["ban_time"]);
     if ($rest_ban_time <= 0) {
         unset($_SESSION["ban_time"]);
     } else {
