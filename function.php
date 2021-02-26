@@ -18,11 +18,11 @@ function smile($text)
     );
 }
 /**
- * находит нецензурные слова
+ * находит массив из  нецензурных слов
  * @param $text
- * @return mixed
+ * @return array
  */
-function checkCensor($text)
+function checkCensor($text):array
 {
     preg_match_all("/.*?дурак|микроб|осталоп|идиот.*?/iu", $text, $matches);
     return $matches[0];
