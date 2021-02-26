@@ -25,6 +25,14 @@ session_start();
         <?php
         unset($_SESSION["empty_msg"]);
     }
+    if (isset($_SESSION["empty_name"])) {
+        ?>
+        <div class="alert alert-dark" role="alert">
+            <?= $_SESSION["empty_name"] ?>
+        </div>
+        <?php
+        unset($_SESSION["empty_name"]);
+    }
 
 
 
