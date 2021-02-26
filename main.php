@@ -17,12 +17,25 @@ session_start();
 
 <body>
     <?php
+    if (isset($_SESSION["empty_msg"])) {
+    ?>
+        <div class="alert alert-dark" role="alert">
+            <?= $_SESSION["empty_msg"] ?>
+        </div>
+        <?php
+        unset($_SESSION["empty_msg"]);
+    }
+
+
+
+
+
     if (isset($_SESSION["ban_time"])) {
         $rest_ban_time = 20 - (time() - $_SESSION["ban_time"]);
         if ($rest_ban_time <= 0) {
             unset($_SESSION["ban_time"]);
         } else {
-    ?>
+        ?>
             <div class="alert alert-danger" role="alert">
                 <?= "Вы не можете написать сообщение еще $rest_ban_time секунд" ?>
             </div>
