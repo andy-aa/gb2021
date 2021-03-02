@@ -34,7 +34,7 @@ function checkCensor($text):array
  */
 function saveMessage($message, $name)
 {
-    $data = json_decode(file_get_contents("data.json"));
+    $data = json_decode(file_get_contents("data.json"),true);
     $data[] = ["msg" => $message, "name" => $name, "date_time" => time()];
     file_put_contents("data.json", json_encode($data, JSON_UNESCAPED_UNICODE));
 }
